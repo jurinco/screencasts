@@ -350,7 +350,7 @@ class UserMailer < ApplicationMailer
 
   def welcome_email(user)
     @user = user
-    attachments['logo.png'] = File.read(Rails.root.join('app', 'assets', 'images', 'logo.png'))
+    attachments.inline['logo.png'] = File.read(Rails.root.join('app', 'assets', 'images', 'logo.png'))
     mail(to: @user.email, subject: 'Welcome to the Example Shop')
   end
 end
